@@ -14,7 +14,7 @@ for line in open("palindromes.tsv"):
     
     for i in range(0, len(line) - 4):
         temp = line[i:i+4]
-        reverse = temp[::-1]
+        reverse = temp[::-1]   #extended slice syntax
         if temp == reverse:
             arr.append(temp)
             
