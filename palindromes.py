@@ -6,6 +6,7 @@ Created on Sun Jul  7 12:47:51 2013
 """
 
 arr = []
+counter = 0
 
 with open("palindromesOUT.txt", "wt") as out:
     
@@ -16,6 +17,8 @@ with open("palindromesOUT.txt", "wt") as out:
             reverse = temp[::-1]   #extended slice syntax.
             if temp == reverse:
                 arr.append(temp)
+                counter += 1
                 out.write(temp + "\n")
             
 print(arr)
+print("\n" + str(counter) + " palindromes in given file")
