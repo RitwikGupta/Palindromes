@@ -6,7 +6,7 @@ Created on Sun Jul  7 12:47:51 2013
 """
 
 dic = {}
-countOne = 0; countTwo = 0; countThr = 0; countFou = 0;
+countArr = [0,0,0,0,0]
 
 with open("palindromesOUT.txt", "wt") as out:
     
@@ -19,14 +19,15 @@ with open("palindromesOUT.txt", "wt") as out:
         dic[key] = value
         
 for key in dic:
-    if int(key[0]) == 1:
-        countOne += 1
-    elif int(key[0]) == 2:
-        countTwo += 1
-    elif int(key[0]) == 3:
-        countThr += 1
-    elif int(key[0]) == 4:
-        countFou += 1
-        
-print("countOne: " + str(countOne), "\ncountTwo: " + str(countTwo))
-print("countThr: " + str(countThr), "\ncountFou: " + str(countFou))
+    if int(key) >= 0 and int(key) < 10000000:
+        countArr[0] += 1
+    elif int(key) >= 10000000 and int(key) < 20000000:
+        countArr[1] += 1
+    elif int(key) >= 20000000 and int(key) < 30000000:
+        countArr[2] += 1
+    elif int(key) >= 30000000 and int(key) < 40000000:
+        countArr[3] += 1
+    else:
+        countArr[4] += 1
+    
+print(countArr)
