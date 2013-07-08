@@ -8,15 +8,14 @@ Created on Sun Jul  7 12:47:51 2013
 dic = {}
 countArr = [0,0,0,0,0]
 
-with open("palindromesOUT.txt", "wt") as out:
     
-    for line in open("palindromesTHREE.tsv"):
-        
-        tab = line.index("\t")
-        key = line[:tab]
-        value = line[tab + 1:len(line) - 1]
-        
-        dic[key] = value
+for line in open("palindromesTHREE.tsv"):
+    
+    tab = line.index("\t")
+    key = line[:tab]
+    value = line[tab + 1:len(line) - 1]
+    
+    dic[key] = value
         
 for key in dic:
     if int(key) >= 0 and int(key) < 10000000:
