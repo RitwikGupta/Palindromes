@@ -22,7 +22,6 @@ for line in open("./palins/chr1-fa-palin-uniq-txt.tsv"):
     dic[key] = value
     arrTwo.append(key)
     
-print(int(arrTwo[len(arrTwo) - 1]))
 number = int(arrTwo[len(arrTwo) - 1]) / window
 
 arr = [0 for i in range(0, int(number + 1))]
