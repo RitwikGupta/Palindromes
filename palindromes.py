@@ -10,17 +10,18 @@ arrTwo = []
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
+with open("./palins/chr1-fa-palin-uniq-txt.tsv") as f:
+    next(f)
+    for line in f:
     
-for line in open("./palins/chr1-fa-palin-uniq-txt.tsv"):
-    
-    tab = line.index("\t")
-    key = line[:tab]
-    
-    #line - 1 because there is a /n at the end
-    value = line[tab + 1:len(line)]
-    
-    dic[key] = value
-    arrTwo.append(key)
+        tab = line.index("\t")
+        key = line[:tab]
+        
+        #line - 1 because there is a /n at the end
+        value = line[tab + 1:len(line)]
+        
+        dic[key] = value
+        arrTwo.append(key)
     
 number = int(arrTwo[len(arrTwo) - 1]) / window
 
