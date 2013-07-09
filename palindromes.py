@@ -17,7 +17,6 @@ with open("./palins/chr1-fa-palin-uniq-txt.tsv") as f:
         tab = line.index("\t")
         key = line[:tab]
         
-        #line - 1 because there is a /n at the end
         value = line[tab + 1:len(line)]
         
         dic[key] = value
