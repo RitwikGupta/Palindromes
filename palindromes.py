@@ -8,6 +8,7 @@ Created on Sun Jul  7 12:47:51 2013
 sc, sl = 0,0
 dic = {}
 arrTwo = []
+
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
@@ -36,9 +37,9 @@ for key in dic:
         if int(key) >= i*window and int(key) < (i+1)*window:
             arr[i] += 1
  
-print("Your have (approx.) %s windows. Your windows are: \n" % int(number))
+print("\nYou have (approx.) %s windows. The values in your windows are: \n" % int(number))
 print(arr)
 
 sc = sum(arr)
-print("\nScore Count: %s" % sc)
-print("Score length: %s" % (sl/8))
+print("\nScore Count (SC): %s" % sc)
+print("Score Length (SL): %s" % (sl/8))
