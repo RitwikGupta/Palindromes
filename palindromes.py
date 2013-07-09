@@ -12,14 +12,14 @@ arrTwo = []
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
-with open("./palins/chr1-fa-palin-uniq-txt.tsv") as f:
+with open("./palins/chr4-fa-palin-uniq-txt.tsv") as f:
     next(f)
     for line in f:
     
         tab = line.index("\t")
         key = line[:tab]
         
-        value = line[tab + 1:len(line)]
+        value = line[tab + 1:len(line) - 1]
         
         sl += len(value)
         
