@@ -5,6 +5,7 @@ Created on Sun Jul  7 12:47:51 2013
 @author: Ritwik
 """
 
+sc, sl = 0,0
 dic = {}
 arrTwo = []
 window = int(input("Window: "))
@@ -19,6 +20,8 @@ with open("./palins/chr1-fa-palin-uniq-txt.tsv") as f:
         
         value = line[tab + 1:len(line)]
         
+        sl += len(value)
+        
         dic[key] = value
         arrTwo.append(key)
     
@@ -32,5 +35,8 @@ for key in dic:
         #multiples of window
         if int(key) >= i*window and int(key) < (i+1)*window:
             arr[i] += 1
-    
+ 
 print(arr)
+sc = sum(arr)
+print("Score Count: %s" % sc)
+print("Score length: %s" % (sl/8))
