@@ -9,10 +9,11 @@ sc, sl = 0,0
 dic = {}
 arrTwo = []
 
+chrom = input("Chr: ")
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
-with open("./palins/chr4-fa-palin-uniq-txt.tsv") as f:
+with open("./palins/" + chrom + "-fa-palin-uniq-txt.tsv") as f:
     next(f)
     for line in f:
     
