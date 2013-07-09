@@ -7,7 +7,6 @@ Created on Tue Jul  9 12:31:11 2013
 
 temp, exonStart, exonEnd = [],[],[]
 dic = {}
-arrTwo = []
 exonScore = 0
 
 chrom = input("Chr: ")
@@ -22,7 +21,6 @@ with open("./palins/chr" + str(chrom[len(chrom)-1]) + "-fa-palin-uniq-txt.tsv") 
         value = line[tab + 1:len(line) - 1]
         
         dic[key] = value
-        arrTwo.append(key)
 
 with open("genes_RefSeq_KnownGene.txt") as f:
     next(f)
@@ -32,3 +30,10 @@ with open("genes_RefSeq_KnownGene.txt") as f:
             exonStart += map(int, exonStartWork)
             exonEndWork = line.split("\t")[9].strip(",").split(",")
             exonEnd += map(int, exonEndWork)
+            
+for key in dic:
+    for i in range(len(exonStart)):
+        if int(key) >= exonStart[i] and int(key) <= exonEnd[i]:
+            exonScore += 1
+                
+print(exonScore)
