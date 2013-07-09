@@ -36,7 +36,9 @@ for key in dic:
         if int(key) >= i*window and int(key) < (i+1)*window:
             arr[i] += 1
  
+print("Your have (approx.) %s windows. Your windows are: \n" % int(number))
 print(arr)
+
 sc = sum(arr)
-print("Score Count: %s" % sc)
+print("\nScore Count: %s" % sc)
 print("Score length: %s" % (sl/8))
