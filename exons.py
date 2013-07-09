@@ -7,33 +7,36 @@ Created on Tue Jul  9 12:31:11 2013
 
 temp, exonStart, exonEnd = [],[],[]
 dic = {}
+arrKey = []
 exonScore = 0
 
-chrom = input("Chr: ")
+chrom = input("Chromosome number: ")
 
-with open("./palins/chr" + str(chrom[len(chrom)-1]) + "-fa-palin-uniq-txt.tsv") as f:
+with open("./palins/chr" + chrom + "-fa-palin-uniq-txt.tsv") as f:
     next(f)
     for line in f:
     
         tab = line.index("\t")
         key = line[:tab]
-        
-        value = line[tab + 1:len(line) - 1]
-        
+        value = line[tab + 1:len(line) - 1]        
         dic[key] = value
+        
+        arrKey.append(float(key))
 
 with open("genes_RefSeq_KnownGene.txt") as f:
     next(f)
     for line in f:
-        if(line.split("\t")[1] == chrom):
+        if(line.split("\t")[1] == ("chr" + chrom)):
             exonStartWork = line.split("\t")[8].strip(",").split(",")
-            exonStart += map(int, exonStartWork)
+            exonStart += map(float, exonStartWork)
             exonEndWork = line.split("\t")[9].strip(",").split(",")
-            exonEnd += map(int, exonEndWork)
-            
-for key in dic:
-    for i in range(len(exonStart)):
-        if int(key) >= exonStart[i] and int(key) <= exonEnd[i]:
+            exonEnd += map(float, exonEndWork)
+arrTemp = []
+for i in range(len(exonStart)):
+    for key in arrKey:
+        if key >= exonStart[i] and key <= exonEnd[i]:
             exonScore += 1
+            arrTemp.append(key)
                 
-print(exonScore)
+print("The exon palindrome count is %s" % exonScore)
+print(arrTemp)

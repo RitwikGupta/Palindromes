@@ -9,11 +9,11 @@ sc, sl = 0,0
 dic = {}
 arrTwo = []
 
-chrom = input("Chr: ")
+chrom = input("Chromosome number: ")
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
-with open("./palins/" + chrom + "-fa-palin-uniq-txt.tsv") as f:
+with open("./palins/chr" + chrom + "-fa-palin-uniq-txt.tsv") as f:
     next(f)
     for line in f:
     
@@ -26,7 +26,7 @@ with open("./palins/" + chrom + "-fa-palin-uniq-txt.tsv") as f:
         
         dic[key] = value
         arrTwo.append(key)
-    
+        
 number = int(arrTwo[len(arrTwo) - 1]) / window
 
 arr = [0 for i in range(0, int(number + 1))]
