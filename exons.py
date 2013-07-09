@@ -31,12 +31,10 @@ with open("genes_RefSeq_KnownGene.txt") as f:
             exonStart += map(float, exonStartWork)
             exonEndWork = line.split("\t")[9].strip(",").split(",")
             exonEnd += map(float, exonEndWork)
-arrTemp = []
+            
 for i in range(len(exonStart)):
     for key in arrKey:
         if key >= exonStart[i] and key <= exonEnd[i]:
             exonScore += 1
-            arrTemp.append(key)
                 
 print("The exon palindrome count is %s" % exonScore)
-print(arrTemp)
