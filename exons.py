@@ -9,7 +9,6 @@ def exonFind(chrom):
     dic = {}
     arrKey = []
     exonScore = 0
-    
     #chrom = input("Chromosome number: ")
     
     with open("./palins/chr" + chrom + "-fa-palin-uniq-txt.tsv") as f:
@@ -28,23 +27,19 @@ def exonFind(chrom):
         for line in f:
             if(line.split("\t")[1] == ("chr" + chrom)):
                 exonStartWork = line.split("\t")[8].strip(",").split(",")
-                exonStart += map(float, exonStartWork)
+                exonStart += map(int, exonStartWork)
                 exonEndWork = line.split("\t")[9].strip(",").split(",")
-                exonEnd += map(float, exonEndWork)
-                
+                exonEnd += map(int, exonEndWork)
     for i in range(len(exonStart)):
         for key in arrKey:
             if key >= exonStart[i] and key <= exonEnd[i]:
                 exonScore += 1
                     
     print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
-    """WE HAVE PALINDROMES > 10 BASES. THEIR MINIMUM WAS 6"""
-
+    
 
 for i in range(1,9):
     exonFind(str(i))
-exonFind(str(10))
+exonFind("10")
 for i in range(12,23):
     exonFind(str(i))
-    """14 THROWS AN ERROR"""    
-    
