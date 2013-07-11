@@ -4,6 +4,16 @@ Created on Tue Jul  9 12:31:11 2013
 
 @author: Ritwik
 """
+def binarySearch(theList, value, low, high):
+	if high < low:
+		return -1 # indicates the value isn't in array
+	mid = (low + high)/2
+	if theList[mid] > value:
+		return binarySearch(theList, value, low, mid-1)
+	elif theList[mid] < value:
+		return binarySearch(theList, value, mid+1, high)
+	else:
+		return mid
 
 def pdromeCount(chrom):
     temp, exonStart, exonEnd, intronStart, intronEnd = [],[],[],[],[]
@@ -22,7 +32,6 @@ def pdromeCount(chrom):
             dic[key] = value
             
             arrKey.append(float(key))
-            setKey = set(arrKey)
     
     with open("genes_RefSeq_KnownGene.txt") as f:
         next(f)
@@ -38,11 +47,11 @@ def pdromeCount(chrom):
         intronEnd.append(exonStart[i + 1])
     
     for i in range(len(exonStart)):
-        for key in setKey:
+        for key in arrKey:
             if key >= exonStart[i] and key <= exonEnd[i]:
                 exonScore += 1
     for i in range(len(intronStart)):
-        for key in setKey:
+        for key in arrKey:
             if key >= intronStart[i] and key <= intronEnd[i]:
                 intronScore += 1
                     
