@@ -4,16 +4,6 @@ Created on Tue Jul  9 12:31:11 2013
 
 @author: Ritwik
 """
-def binarySearch(theList, value, low, high):
-	if high < low:
-		return -1 # indicates the value isn't in array
-	mid = (low + high)/2
-	if theList[mid] > value:
-		return binarySearch(theList, value, low, mid-1)
-	elif theList[mid] < value:
-		return binarySearch(theList, value, mid+1, high)
-	else:
-		return mid
 
 def pdromeCount(chrom):
     temp, exonStart, exonEnd, intronStart, intronEnd = [],[],[],[],[]
