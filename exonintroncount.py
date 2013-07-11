@@ -52,5 +52,5 @@ def pdromeCount(chrom):
     
 
 pdromeCount("11")
-"""for i in range(14,19):
-    pdromeCount(str(i))"""
+for i in range(14,19):
+    pdromeCount(str(i))
