@@ -35,22 +35,25 @@ def pdromeCount(chrom):
     for i in range(len(exonStart) - 1):
         intronStart.append(exonEnd[i])
         intronEnd.append(exonStart[i + 1])
-    
+        
+    """------------The search starts here------------"""
     for i in range(len(exonStart)):
         for key in arrKey:
             if key >= exonStart[i] and key <= exonEnd[i]:
                 exonScore += 1
                 if exonScore % 10 == 0:
+                    #prints the exonScore at intervals of 10
                     print(exonScore)
     for i in range(len(intronStart)):
         for key in arrKey:
             if key >= intronStart[i] and key <= intronEnd[i]:
                 intronScore += 1
+    """------------The search ends here------------"""
                     
     print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
     print("The intron palindrome count for chromosome " + chrom + " is %s\n" % intronScore)
     
-
+#the function needs the number of chromosome as a string
 pdromeCount("11")
 for i in range(14,19):
     pdromeCount(str(i))
