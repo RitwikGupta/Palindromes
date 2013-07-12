@@ -10,20 +10,21 @@ def pdromeCount(chrom):
     temp, exonStart, exonEnd, intronStart, intronEnd = [],[],[],[],[]
     dic = {}
     arrKey = []
-    exonScore, intronScore, t0, tf = 0,0,0,0
-    #chrom = input("Chromosome number: ")
+    exonScore, intronScore, t0, tf, sl = 0,0,0,0,0
     
-    with open("./myuniq/chr" + chrom + "-fa-palin-myuniq-txt.tsv") as f:
+    with open("./myuniq/chr" + chrom + ".fa.palin.myuniq.txt") as f:
         next(f)
         for line in f:
         
             tab = line.index("\t")
+            tab2 = line.index("\t", tab+1)
             key = line[:tab]
-            value = line[tab + 1:len(line) - 1]        
+            value = line[tab2 + 1:len(line) - 1]        
             dic[key] = value
             
             arrKey.append(float(key))
-    
+            sl += len(value)            
+            
     with open("genes_RefSeq_KnownGene.txt") as f:
         next(f)
         t0 = time.clock()
@@ -61,12 +62,13 @@ def pdromeCount(chrom):
             if key >= intronStart[i] and key <= intronEnd[i]:
                 intronScore += 1
     tf = time.clock()
-    print("Elapsed time to search introns: " + str(tf-t0))
+    print("Elapsed time to search introns: " + str(tf-t0))    
     """------------The search ends here------------"""
                     
     print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
-    print("The intron palindrome count for chromosome " + chrom + " is %s\n" % intronScore)
+    print("The intron palindrome count for chromosome " + chrom + " is %s" % intronScore)
+    print("The score length for chromosome " + chrom + " is %s\n" % (sl/8))
     
 #the function needs the number of chromosome as a string
-for i in range(14,19):
+for i in range(2,23):
     pdromeCount(str(i))
