@@ -1,3 +1,11 @@
+Elapsed time to split and map exons from gene file: 0.22154468415128192
+Elapsed time to calculate and add introns to array: 0.009529069395223994
+Elapsed time to search exons: 6967.443489705104
+Elapsed time to search introns: 7010.380026597274
+The exon palindrome count for chromosome 2 is 30259
+The intron palindrome count for chromosome 2 is 1215609
+The score length for chromosome 2 is 1969559.75
+
 Elapsed time to split and map exons from gene file: 0.19933976843676585
 Elapsed time to calculate and add introns to array: 0.006124585785126119
 Elapsed time to search exons: 1480.3146894431834
