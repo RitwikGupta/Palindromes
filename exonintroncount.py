@@ -13,7 +13,7 @@ def pdromeCount(chrom):
     exonScore, intronScore, t0, tf = 0,0,0,0
     #chrom = input("Chromosome number: ")
     
-    with open("./palins/chr" + chrom + "-fa-palin-uniq-txt.tsv") as f:
+    with open("./myuniq/chr" + chrom + "-fa-palin-myuniq-txt.tsv") as f:
         next(f)
         for line in f:
         
@@ -68,10 +68,5 @@ def pdromeCount(chrom):
     print("The intron palindrome count for chromosome " + chrom + " is %s\n" % intronScore)
     
 #the function needs the number of chromosome as a string
-for i in range(1,9):
+for i in range(14,19):
     pdromeCount(str(i))
-pdromeCount("10")
-for i in range(12,23):
-    pdromeCount(str(i))
-"""for i in range(14,19):
-    pdromeCount(str(i))"""

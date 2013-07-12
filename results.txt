@@ -1,0 +1,35 @@
+Elapsed time to split and map exons from gene file: 0.19933976843676585
+Elapsed time to calculate and add introns to array: 0.006124585785126119
+Elapsed time to search exons: 1480.3146894431834
+Elapsed time to search introns: 1480.907224782631
+The exon palindrome count for chromosome 14 is 13056
+The intron palindrome count for chromosome 14 is 475585
+
+Elapsed time to split and map exons from gene file: 0.2076439206748546
+Elapsed time to calculate and add introns to array: 0.005187765253594989
+Elapsed time to search exons: 1265.6076699344635
+Elapsed time to search introns: 1266.1221497275847
+The exon palindrome count for chromosome 15 is 13645
+The intron palindrome count for chromosome 15 is 388914
+
+Elapsed time to split and map exons from gene file: 0.20340958912038332
+Elapsed time to calculate and add introns to array: 0.005554875721827557
+Elapsed time to search exons: 1245.2095171565388
+Elapsed time to search introns: 1238.0166970430992
+The exon palindrome count for chromosome 16 is 16767
+The intron palindrome count for chromosome 16 is 351885
+
+Elapsed time to split and map exons from gene file: 0.2092087999544674
+Elapsed time to calculate and add introns to array: 0.0072348315707131405
+Elapsed time to search exons: 1517.0324637488548
+Elapsed time to search introns: 1515.7664978876965
+The exon palindrome count for chromosome 17 is 20002
+The intron palindrome count for chromosome 17 is 331811
+
+Elapsed time to split and map exons from gene file: 0.18579882184349117
+Elapsed time to calculate and add introns to array: 0.0020839394437643932
+Elapsed time to search exons: 475.5650223143184
+Elapsed time to search introns: 480.71027528422746
+The exon palindrome count for chromosome 18 is 7869
+The intron palindrome count for chromosome 18 is 356615
+
