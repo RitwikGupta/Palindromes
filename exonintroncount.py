@@ -93,17 +93,21 @@ def pdromeCount(chrom):
     print("Elapsed time to search exons: " + str(tf-t0))
 
     t0= time.clock()
-    for k in range(1, 25):
-        for i in range(int(k*(len(intronStart) / 25)), int(k+1*(len(intronStart) / 25))):
+    intronStartChunks = [intronStart[x:x+10000] for x in range(0, len(intronStart), 10000)]
+    intronEndChunks = [intronEnd[x:x+10000] for x in range(0, len(intronEnd), 10000)]
+    for k in range(1, 10000):
+        for i in range(len(intronStartChunks[k])):
 
             #makes a list of the positions in an intron
-            fooList = [i for i in range(intronStart[i], intronEnd[i] + 1)]
+            fooList = [i for i in range(intronStartChunks[k][i], intronEndChunks[k][i] + 1)]
             #appends the list to the intron set
             intronSet.update(set(fooList))
 
         for key in arrKey:
             if key in intronSet:
                 intronScore += 1
+                if intronScore % 10 == 0:
+                    print(intronScore)
 
         tf = time.clock()
     print("Elapsed time to search introns: " + str(tf-t0))
