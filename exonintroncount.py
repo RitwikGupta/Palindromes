@@ -38,7 +38,7 @@ def pdromeCount(chrom):
 #==============================================================================
 #     """------------Module 2------------"""
 #==============================================================================
-    with open("genes_RefSeq_KnownGene.txt") as f:
+    with open("hgTablesOut.txt") as f:
         #skip header line
         next(f)
         t0 = time.clock()
