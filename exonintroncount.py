@@ -97,6 +97,13 @@ def pdromeCount(chrom):
 
     t0= time.clock()
 
+    for key in arrKey:
+
+        if key not in exonSet:
+            intronScore += 1
+            slIntron += len(dic[str(int(key))])
+
+        
     tf = time.clock()
     print("Elapsed time to search introns: " + str(tf-t0))
 #==============================================================================
@@ -105,8 +112,8 @@ def pdromeCount(chrom):
 
     print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
     print("The intron palindrome count for chromosome " + chrom + " is %s" % intronScore)
-    print("The score length for exons of chromosome " + chrom + " is %s\n" % (slExon/8.0))
-    #print("The score length for introns of chromosome " + chrom + " is %\n" % (slIntron/8.0))
+    print("The score length for exons of chromosome " + chrom + " is %s" % (slExon/8.0))
+    print("The score length for introns of chromosome " + chrom + " is %s\n" % (slIntron/8.0))
 
 #the function needs the number of chromosome as a string
 for i in range(1,23):
