@@ -2,22 +2,39 @@
 """
 Created on Tue Jul  9 12:31:11 2013
 
-@author: Ritwik
+@author: Ritwik Gupta
 """
-import time
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                 "
+"   The function's parameters are:                "
+"                                                 "
+"       'chrom' AS STRING                         "
+"                                                 "
+"   chrom is the number of the chromosome.        "
+"                                                 "
+"   The function calculates and outputs:          "
+"                                                 "
+"       SC Exon                                   "
+"       SC Intron                                 "
+"       SL Exon                                   "
+"       SL Intron                                 "
+"                                                 "
+"   in that order.                                "
+"                                                 "
+"   CoSBBI - DBMI Pitt                            "
+"                                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 def pdromeCount(chrom):
-    temp, exonStart, exonEnd, intronStart, intronEnd = [],[],[],[],[]
+    
+    exonStart, exonEnd, intronStart, intronEnd, arrKey = [],[],[],[],[]
     exonSet, intronSet = set(),set()
-    arrKey = []
     dic = {}
-    exonScore, intronScore, t0, tf, slExon, slIntron = 0,0,0,0,0,0
+    exonScore, intronScore, slExon, slIntron = 0,0,0,0
 
-#==============================================================================
-#     """------------Module 1------------"""
-#==============================================================================
-    t0 = time.clock()
     with open("./myuniq/chr" + chrom + ".fa.palin.myuniq.txt") as f:
+        
+        #skip header line
         next(f)
         for line in f:
 
@@ -29,19 +46,12 @@ def pdromeCount(chrom):
             dic[key] = value            
 
             arrKey.append(float(key))
-    tf = time.clock()
-    print("Elapsed time to read chromosome file: " + str(tf-t0))
-#==============================================================================
-#     """------------Module 1------------"""
-#==============================================================================
-
-#==============================================================================
-#     """------------Module 2------------"""
-#==============================================================================
+    
     with open("hgTablesOut.txt") as f:
+        
         #skip header line
         next(f)
-        t0 = time.clock()
+              
         for line in f:
             if(line.split("\t")[1] == ("chr" + chrom)):
 
@@ -52,32 +62,13 @@ def pdromeCount(chrom):
                 exonEndWork = line.split("\t")[9].strip(",").split(",")
                 exonEnd += map(int, exonEndWork)
 
-        tf = time.clock()
-        print("Elapsed time to split and map exons from gene file: " + str(tf-t0))
-#==============================================================================
-#         """------------Module 2------------"""
-#==============================================================================
-
-#==============================================================================
-#     """------------Module 3------------"""
-#==============================================================================
-    t0 = time.clock()
-    #adds the spaces left between the exons as introns
+    #adds intron Starts and Ends to individual lists
     for i in range(len(exonStart) - 1):
 
         intronStart.append(exonEnd[i])
         intronEnd.append(exonStart[i + 1])
 
-    tf = time.clock()
-    print("Elapsed time to calculate and add introns to array: " + str(tf-t0))
-#==============================================================================
-#     """------------Module 4------------"""
-#==============================================================================
-
-#==============================================================================
-#     """------------The search starts here / Module 5------------"""
-#==============================================================================
-    t0 = time.clock()
+    #Lookup key in exonSet
 
     for i in range(len(exonStart)):
 
@@ -92,10 +83,7 @@ def pdromeCount(chrom):
             exonScore += 1
             slExon += len(dic[str(int(key))])
 
-    tf = time.clock()
-    print("Elapsed time to search exons: " + str(tf-t0))
-
-    t0= time.clock()
+    #Lookup key in intronSet
 
     for key in arrKey:
 
@@ -103,19 +91,13 @@ def pdromeCount(chrom):
             intronScore += 1
             slIntron += len(dic[str(int(key))])
 
-        
-    tf = time.clock()
-    print("Elapsed time to search introns: " + str(tf-t0))
-#==============================================================================
-#     """------------The search ends here / Module 5------------"""
-#==============================================================================
-
     print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
     print("The intron palindrome count for chromosome " + chrom + " is %s" % intronScore)
     print("The score length for exons of chromosome " + chrom + " is %s" % (slExon/8.0))
-    print("The score length for introns of chromosome " + chrom + " is %s\n" % (slIntron/8.0))
+    print("The score length for introns of chromosome " + chrom + " is %s\n" % (slIntron/8.0)) #new line at end
 
-#the function needs the number of chromosome as a string
+#---------------MAIN---------------
+    
 for i in range(1,23):
     pdromeCount(str(i))
 pdromeCount("X")
