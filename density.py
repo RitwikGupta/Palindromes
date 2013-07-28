@@ -68,33 +68,24 @@ def pdromeCount(chrom):
         intronStart.append(exonEnd[i])
         intronEnd.append(exonStart[i + 1])
 
+    print("shit")
     #Lookup key in exonSet
-
+    counter = 0
     for i in range(len(exonStart)):
 
         #makes a list of all the positions in an exon
-        fooList = [i for i in range(exonStart[i], exonEnd[i] + 1)]
+        fooList = [k for k in range(exonStart[k], exonEnd[k] + 1)]
         #appends the list to the exon set
-        exonSet.update(set(fooList))
+        exonSet = (set(fooList))
 
-    for key in arrKey:
+        for key in arrKey:
+            if key > exonStart[i] and key in exonSet:
+                counter += 1
+                if counter % 10 == 0:
+                    print(counter)
+                break
 
-        if key in exonSet:
-            exonScore += 1
-            slExon += len(dic[str(int(key))])
-
-    #Lookup key in intronSet
-
-    for key in arrKey:
-
-        if key not in exonSet:
-            intronScore += 1
-            slIntron += len(dic[str(int(key))])
-
-    print("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
-    print("The intron palindrome count for chromosome " + chrom + " is %s" % intronScore)
-    print("The score length for exons of chromosome " + chrom + " is %s" % (slExon/8.0))
-    print("The score length for introns of chromosome " + chrom + " is %s\n" % (slIntron/8.0)) #new line at end
+    print("These many exons contain at least 1 palindrome in chr " + chrom + ": %s" % counter )
     
 #---------------MAIN---------------
     

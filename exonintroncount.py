@@ -61,6 +61,7 @@ def pdromeCount(chrom):
                 #gets the exon end group in that line
                 exonEndWork = line.split("\t")[9].strip(",").split(",")
                 exonEnd += map(int, exonEndWork)
+        print(len(exonStart))
 
     #adds intron Starts and Ends to individual lists
     for i in range(len(exonStart) - 1):
@@ -98,8 +99,8 @@ def pdromeCount(chrom):
 
 #---------------MAIN---------------
     
-for i in range(1,23):
+"""for i in range(1,23):
     pdromeCount(str(i))
 pdromeCount("X")
-pdromeCount("Y")
-pdromeCount("M")
+pdromeCount("Y")"""
+pdromeCount("21")
