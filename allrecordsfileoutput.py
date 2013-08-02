@@ -32,8 +32,8 @@ def pdromeCount(chrom):
     tf = time.clock()
     print("Elapsed time to read chromosome file: " + str(tf-t0))
 
-    with open("hgTablesOut.txt", "a") as out:        
-        with open("hgTables.txt") as f:
+    with open("AllIntergenicOut.txt", "a") as out:        
+        with open("AllIntergenic.txt") as f:
             
             #skip header line
             next(f)
@@ -41,14 +41,14 @@ def pdromeCount(chrom):
             t0 = time.clock()
             for line in f:
 
-                if(line.split("\t")[1] == ("chr" + chrom)):
+                if(line.split("\t")[0] == ("chr" + chrom)):
                     
                     #gets the exon start group in that line
-                    exonStartWork = line.split("\t")[8].strip(",").split(",")
+                    exonStartWork = line.split("\t")[1].strip(",").split(",")
                     exonStart += map(int, exonStartWork)
                     
                     #gets the exon end group in that line
-                    exonEndWork = line.split("\t")[9].strip(",").split(",")
+                    exonEndWork = line.split("\t")[2].strip(",").split(",")
                     exonEnd += map(int, exonEndWork)
                     
             tf = time.clock()
