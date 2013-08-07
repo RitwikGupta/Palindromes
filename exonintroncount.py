@@ -25,8 +25,6 @@ Created on Tue Jul  9 12:31:11 2013
 "   CoSBBI - DBMI Pitt                            "
 "                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""
-import os
-
 def pdromeCount(chrom):
     
     exonStart, exonEnd, intronStart, intronEnd, arrKey = [],[],[],[],[]
@@ -34,7 +32,7 @@ def pdromeCount(chrom):
     dic = {}
     exonScore, intronScore, slExon, slIntron = 0,0,0,0
 
-    with open("./myuniq/chr" + chrom + ".fa.palin.myuniq.txt") as f:
+    with open("./Data/myuniq/chr" + chrom + ".fa.palin.myuniq.txt") as f:
         
         #skip header line
         next(f)
@@ -49,20 +47,20 @@ def pdromeCount(chrom):
 
             arrKey.append(float(key))
 
-    with open("ScSlOut.txt", "a") as out:
-        with open("hgTablesOut.txt") as f:
+    with open("./Data/AllPalLengthOut.txt", "a") as out:
+        with open("./Data/hgTablesOut.txt") as f:
             
             #skip header line
             next(f)
                   
             for line in f:
-                if(line.split("\t")[0] == ("chr" + chrom)):
+                if(line.split("\t")[1] == ("chr" + chrom)):
 
                     #gets the exon start group in that line
-                    exonStartWork = line.split("\t")[1].strip(",").split(",")
+                    exonStartWork = line.split("\t")[8].strip(",").split(",")
                     exonStart += map(int, exonStartWork)
                     #gets the exon end group in that line
-                    exonEndWork = line.split("\t")[2].strip(",").split(",")
+                    exonEndWork = line.split("\t")[9].strip(",").split(",")
                     exonEnd += map(int, exonEndWork)
             print(len(exonStart))
 
@@ -81,31 +79,22 @@ def pdromeCount(chrom):
             #appends the list to the exon set
             exonSet.update(set(fooList))
 
-        for i in range(len(intronStart)):
-
-            #makes a list of all the position in an intron
-            fooLost = [i for i in range(intronStart[i], intronEnd[i] + 1)]
-            #appends the list to the intron set
-            intronSet.update(set(fooLost))
-
         for key in arrKey:
 
             if key in exonSet:
                 exonScore += 1
-                slExon += len(dic[str(int(key))])
+                if len(dic[str(int(key))]) >= 50:
+                    slExon += 1
 
-        #Lookup key in intronSet
-
-        for key in arrKey:
-
-            if key in intronSet:
+            if key not in exonSet:
                 intronScore += 1
-                slIntron += len(dic[str(int(key))])
+                if len(dic[str(int(key))]) >= 50:
+                    slIntron += 1
 
-        out.write("The exon palindrome count for chromosome " + chrom + " is %s" % exonScore)
-        out.write("The intron palindrome count for chromosome " + chrom + " is %s" % intronScore)
-        out.write("The score length for exons of chromosome " + chrom + " is %s" % (slExon/8.0))
-        out.write("The score length for introns of chromosome " + chrom + " is %s\n" % (slIntron/8.0)) #new line at end
+        out.write("The exon palindrome count for chromosome " + chrom + " is %s\n" % exonScore)
+        out.write("The intron palindrome count for chromosome " + chrom + " is %s\n" % intronScore)
+        out.write("The score length for exons of chromosome " + chrom + " is %s\n" % (slExon))
+        out.write("The score length for introns of chromosome " + chrom + " is %s\n\n" % (slIntron)) #new line at end
 
 #---------------MAIN---------------
     
@@ -113,4 +102,4 @@ for i in range(1,23):
     pdromeCount(str(i))
 pdromeCount("X")
 pdromeCount("Y")
-pdromeCount("21")
+pdromeCount("M")

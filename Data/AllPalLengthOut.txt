@@ -1,0 +1,125 @@
+The exon palindrome count for chromosome 1 is 30944
+The intron palindrome count for chromosome 1 is 802407
+The score length for exons of chromosome 1 is 72
+The score length for introns of chromosome 1 is 3986
+
+The exon palindrome count for chromosome 2 is 25085
+The intron palindrome count for chromosome 2 is 902388
+The score length for exons of chromosome 2 is 54
+The score length for introns of chromosome 2 is 4959
+
+The exon palindrome count for chromosome 3 is 19217
+The intron palindrome count for chromosome 3 is 742064
+The score length for exons of chromosome 3 is 42
+The score length for introns of chromosome 3 is 4079
+
+The exon palindrome count for chromosome 4 is 14029
+The intron palindrome count for chromosome 4 is 759528
+The score length for exons of chromosome 4 is 25
+The score length for introns of chromosome 4 is 4792
+
+The exon palindrome count for chromosome 5 is 16042
+The intron palindrome count for chromosome 5 is 686202
+The score length for exons of chromosome 5 is 31
+The score length for introns of chromosome 5 is 4046
+
+The exon palindrome count for chromosome 6 is 17627
+The intron palindrome count for chromosome 6 is 641009
+The score length for exons of chromosome 6 is 43
+The score length for introns of chromosome 6 is 3521
+
+The exon palindrome count for chromosome 7 is 14967
+The intron palindrome count for chromosome 7 is 579897
+The score length for exons of chromosome 7 is 39
+The score length for introns of chromosome 7 is 3289
+
+The exon palindrome count for chromosome 8 is 13078
+The intron palindrome count for chromosome 8 is 541593
+The score length for exons of chromosome 8 is 20
+The score length for introns of chromosome 8 is 3026
+
+The exon palindrome count for chromosome 9 is 15947
+The intron palindrome count for chromosome 9 is 437753
+The score length for exons of chromosome 9 is 53
+The score length for introns of chromosome 9 is 2162
+
+The exon palindrome count for chromosome 10 is 13007
+The intron palindrome count for chromosome 10 is 479792
+The score length for exons of chromosome 10 is 36
+The score length for introns of chromosome 10 is 2468
+
+The exon palindrome count for chromosome 11 is 16210
+The intron palindrome count for chromosome 11 is 473995
+The score length for exons of chromosome 11 is 30
+The score length for introns of chromosome 11 is 2489
+
+The exon palindrome count for chromosome 12 is 16877
+The intron palindrome count for chromosome 12 is 478100
+The score length for exons of chromosome 12 is 27
+The score length for introns of chromosome 12 is 2606
+
+The exon palindrome count for chromosome 13 is 8138
+The intron palindrome count for chromosome 13 is 387211
+The score length for exons of chromosome 13 is 21
+The score length for introns of chromosome 13 is 2396
+
+The exon palindrome count for chromosome 14 is 10416
+The intron palindrome count for chromosome 14 is 327064
+The score length for exons of chromosome 14 is 13
+The score length for introns of chromosome 14 is 1679
+
+The exon palindrome count for chromosome 15 is 11287
+The intron palindrome count for chromosome 15 is 287733
+The score length for exons of chromosome 15 is 32
+The score length for introns of chromosome 15 is 1405
+
+The exon palindrome count for chromosome 16 is 13275
+The intron palindrome count for chromosome 16 is 259338
+The score length for exons of chromosome 16 is 25
+The score length for introns of chromosome 16 is 1361
+
+The exon palindrome count for chromosome 17 is 16314
+The intron palindrome count for chromosome 17 is 245629
+The score length for exons of chromosome 17 is 26
+The score length for introns of chromosome 17 is 1184
+
+The exon palindrome count for chromosome 18 is 6287
+The intron palindrome count for chromosome 18 is 288356
+The score length for exons of chromosome 18 is 7
+The score length for introns of chromosome 18 is 1598
+
+The exon palindrome count for chromosome 19 is 17595
+The intron palindrome count for chromosome 19 is 156235
+The score length for exons of chromosome 19 is 32
+The score length for introns of chromosome 19 is 816
+
+The exon palindrome count for chromosome 20 is 8378
+The intron palindrome count for chromosome 20 is 200445
+The score length for exons of chromosome 20 is 12
+The score length for introns of chromosome 20 is 952
+
+The exon palindrome count for chromosome 21 is 5708
+The intron palindrome count for chromosome 21 is 133200
+The score length for exons of chromosome 21 is 27
+The score length for introns of chromosome 21 is 808
+
+The exon palindrome count for chromosome 22 is 7246
+The intron palindrome count for chromosome 22 is 107173
+The score length for exons of chromosome 22 is 12
+The score length for introns of chromosome 22 is 545
+
+The exon palindrome count for chromosome X is 12749
+The intron palindrome count for chromosome X is 570013
+The score length for exons of chromosome X is 51
+The score length for introns of chromosome X is 3891
+
+The exon palindrome count for chromosome Y is 1501
+The intron palindrome count for chromosome Y is 95170
+The score length for exons of chromosome Y is 9
+The score length for introns of chromosome Y is 758
+
+The exon palindrome count for chromosome M is 30
+The intron palindrome count for chromosome M is 17
+The score length for exons of chromosome M is 0
+The score length for introns of chromosome M is 0
+
