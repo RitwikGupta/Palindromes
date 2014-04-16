@@ -96,10 +96,12 @@ def pdromeCount(chrom):
         out.write("The score length for exons of chromosome " + chrom + " is %s\n" % (slExon))
         out.write("The score length for introns of chromosome " + chrom + " is %s\n\n" % (slIntron)) #new line at end
 
-#---------------MAIN---------------
-    
-for i in range(1,23):
-    pdromeCount(str(i))
-pdromeCount("X")
-pdromeCount("Y")
-pdromeCount("M")
+def main():    
+	for i in range(1,23):
+		pdromeCount(str(i))
+	pdromeCount("X")
+	pdromeCount("Y")
+	pdromeCount("M")
+
+if __name__ == '__main__':
+	main()

@@ -13,7 +13,7 @@ chrom = input("Chromosome number: ")
 window = int(input("Window: "))
 
 #initialize array with 'number' + 1 elements of 0
-with open("./palins/chr" + chrom + "-fa-palin-uniq-txt.tsv") as f:
+with open("./Palins/chr" + str(chrom) + "-fa-palin-uniq-txt.tsv") as f:
     next(f)
     for line in f:
     
