@@ -1,2 +1,0 @@
-The exon palindrome count for chromosome 1 is 0The intron palindrome count for chromosome 1 is 833351The score length for exons of chromosome 1 is 0.0The score length for introns of chromosome 1 is 1755231.625
-The exon palindrome count for chromosome 2 is 0The intron palindrome count for chromosome 2 is 927473The score length for exons of chromosome 2 is 0.0The score length for introns of chromosome 2 is 1969564.375
